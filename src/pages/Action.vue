@@ -1,8 +1,7 @@
 <template>
   <q-page class="flex flex-center">
 
-    {{dataComment}}
-    {{dataPost}}
+    {{data}}
   </q-page>
 </template>
 
@@ -11,15 +10,16 @@ import { mapState, mapActions } from 'vuex'
 export default {
   name: 'PageIndex',
   created () {
-    this.fetchDataPost()
-    this.fetchDataComennt()
+    this.fetchData1()
   },
   methods: {
-
-    ...mapActions('showcase', ['fetchDataPost', 'fetchDataComennt'])
+    ...mapActions('showcase', ['fetchData1'])
   },
   computed: {
-    ...mapState('showcase', ['dataPost', 'dataComment'])
+    // ambil data dari state
+    ...mapState('showcase', ['data'])
+    // jalankanAction
+
   }
 }
 
